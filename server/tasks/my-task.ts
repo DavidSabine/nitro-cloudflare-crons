@@ -1,20 +1,19 @@
 export default defineTask({
-  meta: {
-    name: "my-task",
-    description: "A specific task",
-  },
+	meta: {
+		name: "my-task",
+		description: "A task to call an API endpoint",
+	},
   run({ payload, context }) {
     console.log("Running my task...");
-
-    // Example of calling an external API that don't support crons
-    // $fetch('https://my-nuxt-app.com/api/my-endpoint', {
-    //   method: 'POST',
-    //   headers: {
-    //     Authorization: 'token MY_SECRET_TOKEN'
-    //   }
-    // })
-
-
-    return { result: "Success" };
+  try {
+      const response = await $fetch('https://betterteamsacademy-nuxt4.david-f2e.workers.dev/api/auto-mailer', {
+        method: 'POST'
+      });
+      console.log("API response:", response);
+      return { result: "Success", response };
+    } catch (error) {
+      console.error("API call failed:", error);
+      return { result: "Error", error: error.message };
+    }
   },
 });

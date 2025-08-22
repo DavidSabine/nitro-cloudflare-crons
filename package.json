@@ -3,10 +3,15 @@
   "scripts": {
     "build": "nitro build",
     "dev": "nitro dev",
+		"done": "pnpm lint && pnpm build",
+		"lint": "pnpm biome lint",
     "prepare": "nitro prepare",
     "preview": "node .output/server/index.mjs"
+
   },
   "devDependencies": {
-    "nitropack": "latest"
+    "@biomejs/biome": "2.2.0",
+    "nitropack": "latest",
+    "wrangler": "4.32.0"
   }
 }
