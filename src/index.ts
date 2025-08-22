@@ -5,7 +5,7 @@ export default {
 	async scheduled() {
 		console.log('Processing cron job…')
 		const response = await fetch('https://betterteamsacademy-nuxt4.david-f2e.workers.dev/api/scheduled-mail', {
-			method: 'GET',
+			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
