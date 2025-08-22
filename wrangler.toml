@@ -1,14 +1,9 @@
-# https://nitro.unjs.io/deploy/providers/cloudflare#cloudflare-module-workers
-name = "nitro-crons-cloudflare"
-main = "./.output/server/index.mjs"
-compatibility_date = "2024-09-05"
-[site]
-bucket = ".output/public"
+name = "betterteams-academy-cron"
+compatibility_date = "2025-08-22"
+main = "src/index.ts"
 
-# https://developers.cloudflare.com/workers/configuration/cron-triggers/
 [triggers]
-crons = ["* * * * *"]
+crons = ["0 * * * *"]
 
-# wrangler.toml (wrangler v3.88.0^)
 [observability.logs]
-enabled = false
+enabled = true

@@ -1,17 +1,17 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "nitro build",
-    "dev": "nitro dev",
+	"private": true,
+	"scripts": {
+		"build": "nitro build",
+		"dev": "nitro dev",
+		"deploy": "pnpm wrangler deploy",
 		"done": "pnpm lint && pnpm build",
 		"lint": "pnpm biome lint",
-    "prepare": "nitro prepare",
-    "preview": "node .output/server/index.mjs"
-
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.0",
-    "nitropack": "latest",
-    "wrangler": "4.32.0"
-  }
+		"prepare": "nitro prepare",
+		"preview": "node .output/server/index.mjs"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.0",
+		"nitropack": "latest",
+		"wrangler": "4.32.0"
+	}
 }
